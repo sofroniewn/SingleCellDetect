@@ -34,7 +34,7 @@ fig.subplots_adjust(hspace=0.01, wspace=0.01, top=0.9, bottom=0, left=0, right=1
 plt.show()
 ```
 
-<img src="./example.png" width="350">
+<img src="./example.png" width="450">
 
 ### usage
 
