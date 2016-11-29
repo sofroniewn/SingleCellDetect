@@ -8,9 +8,7 @@ This package provided several methods for detecting the boundaries of a single c
 
 ```bash
 git clone https://github.com/sofroniewn/SingleCellDetect
-git clone https://github.com/sofroniewn/CellMagicWand
 ```
-Add both SingleCellDectect and CellMagicWand to your `PYTHONPATH`.
 
 ### example
 ```python

@@ -1,8 +1,8 @@
-from numpy import zeros, percentile, pi
+from numpy import zeros, pi
 from skimage.morphology import watershed, disk, rectangle, dilation
 from skimage.filters import sobel, sobel_h
 from skimage.filters.rank import median
-from cell_magic_wand import image_cart_to_polar, image_polar_to_cart
+from .utils import norm, image_cart_to_polar, image_polar_to_cart
 
 def watershed_edge(image, dilationSize=0, radial=True, filterSize=0):
     """
@@ -43,24 +43,6 @@ def watershed_edge(image, dilationSize=0, radial=True, filterSize=0):
     labels = watershed(edges, markers)
 
     return labels == 1
-
-def norm(image, min=0, max=100):
-    """
-    Clip and rescale an image to be between [0, 1]
-
-    Parameters
-    ----------
-    image : a 2d image
-        The image to be rescaled.
-    min : float
-        Lower percentile value.
-    max : float
-        Upper percentile value.
-    """
-
-    tmp = image.astype('float').clip(percentile(image,min),percentile(image,max))
-    tmp = tmp - tmp.min()
-    return tmp/tmp.max()
 
 def sobel_r(image, filterSize):
     """

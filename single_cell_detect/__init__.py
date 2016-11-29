@@ -1,3 +1,3 @@
 from .single_cell_detect import watershed_edge
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
