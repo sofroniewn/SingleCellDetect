@@ -47,8 +47,8 @@ edges of `image`. The `dilationSize`  controls the amount of dilation applied
 to the central maker for the marker controlled segmentation. If `radial` is
 true the edge detection will be done radially by first transforming image to
 polar coordinates. The `filterSize` controls the amount of median filtering
-applied after edge detection before the watershed. If radial is false the
-filtering is with a disk, if radial is true the filtering is tangent to the
+applied after edge detection before the watershed. If `radial` is false the
+filtering is with a disk, if `radial` is true the filtering is tangent to the
 radial direction.
 
 
