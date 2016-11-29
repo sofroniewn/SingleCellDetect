@@ -14,12 +14,29 @@ Add both SingleCellDectect and CellMagicWand to your `PYTHONPATH`.
 
 ### example
 ```python
+import matplotlib.pyplot as plt
 from single_cell_detect import watershed_edge as detect
 from skimage.data import coins
 
 image = coins()[:100,:100]
 mask = detect(image, dilationSize=1, radial=True, filterSize=5)
+
+fig, axes = plt.subplots(ncols=2, figsize=(6, 3), sharex=True, sharey=True, subplot_kw={'adjustable':'box-forced'})
+ax0, ax1 = axes
+
+ax0.imshow(image, cmap=plt.cm.gray, interpolation='nearest')
+ax0.set_title('Coins')
+ax1.imshow(mask, cmap=plt.cm.gray, interpolation='nearest')
+ax1.set_title('Mask')
+
+for ax in axes:
+    ax.axis('off')
+
+fig.subplots_adjust(hspace=0.01, wspace=0.01, top=0.9, bottom=0, left=0, right=1)
+plt.show()
 ```
+
+<img src="./example.png" width="350">
 
 ### usage
 
