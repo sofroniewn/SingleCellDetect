@@ -90,7 +90,7 @@ def image_polar_to_cart(mask, center, min_radius, max_radius, output_shape, zoom
         center = (center[0]*zoom_factor + zoom_factor/2, center[1]*zoom_factor + zoom_factor/2)
         min_radius = min_radius * zoom_factor
         max_radius = max_radius * zoom_factor
-        output_shape = map(lambda a: a * zoom_factor, output_shape)
+        output_shape = list(map(lambda a: a * zoom_factor, output_shape))
 
     # new image
     image = zeros(output_shape)

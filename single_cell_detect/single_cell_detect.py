@@ -32,7 +32,7 @@ def watershed_edge(image, dilationSize=0, radial=True, filterSize=0):
         edges = median(norm(edges), disk(filterSize))
 
     markers = zeros(image.shape)
-    markers[markers.shape[0]/2,markers.shape[1]/2] = 1
+    markers[int(markers.shape[0]/2),int(markers.shape[1]/2)] = 1
     markers = dilation(markers, disk(dilationSize))
 
     markers[0, :] = 2
@@ -59,7 +59,7 @@ def sobel_r(image, filterSize):
     """
 
     phase_width = int(2 * pi * image.shape[1]/2 * 10)
-    polar_image = image_cart_to_polar(image, [image.shape[0]/2, image.shape[1]/2], 0, image.shape[1]/2, phase_width=phase_width, zoom_factor=2)
+    polar_image = image_cart_to_polar(image, [int(image.shape[0]/2), int(image.shape[1]/2)], 0, int(image.shape[1]/2), phase_width=phase_width, zoom_factor=2)
     polar_image = median(norm(polar_image), rectangle(1,2*filterSize+1))
     edge_sobel = sobel_h(polar_image)
-    return image_polar_to_cart(edge_sobel, [image.shape[0]/2, image.shape[1]/2], 0, image.shape[1]/2, image.shape, zoom_factor=2)
+    return image_polar_to_cart(edge_sobel, [int(image.shape[0]/2), int(image.shape[1]/2)], 0, int(image.shape[1]/2), image.shape, zoom_factor=2)
