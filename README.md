@@ -7,6 +7,12 @@ This package provided a method `watershed_edge` for detecting the boundaries of 
 ### install
 
 ```bash
+pip install single_cell_detect
+```
+
+or
+
+```bash
 git clone https://github.com/sofroniewn/SingleCellDetect
 ```
 
