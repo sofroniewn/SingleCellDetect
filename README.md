@@ -1,8 +1,8 @@
-# SingleCellDetect (WIP)
+# SingleCellDetect
 
 > Detect a single cell located in the center of a 2d image
 
-This package provided several methods for detecting the boundaries of a single cell located at the center of an image and is useful when performing cell finding on biological images or movie. It may be used together with other packages that finds the locations of cell centers in a larger image.
+This package provided a method `watershed_edge` for detecting the boundaries of a single cell located at the center of an image and is useful when performing cell finding on biological images or movie. It may be used together with other packages that finds the locations of cell centers in a larger image.
 
 ### install
 
